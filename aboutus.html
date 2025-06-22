@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us | FastShop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm py-0">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3" href="index.html">FastShop</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+        <ul class="navbar-nav gap-lg-4 mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link fw-medium" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium active" href="aboutus.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link fw-medium" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="d-flex align-items-center gap-3">
+        <a id="account-link" class="text-decoration-none fw-medium" style="display:none;"></a>
+        <a id="register-link" class="btn btn-outline-primary btn-sm" href="register.html">Register</a>
+        <a class="position-relative text-dark" href="cart.html">
+          <i class="bi bi-cart3 fs-5"></i>
+          <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="py-5 bg-light">
+      <div class="container text-center">
+        <h1 class="fw-bold mb-3">Our Story</h1>
+        <p class="lead text-muted mx-auto" style="max-width:680px;">
+          FastShop began with one goal: make online tech shopping lightning-fast and genuinely enjoyable. From humble beginnings to
+          thousands of happy customers worldwide, our journey is only getting started.
+        </p>
+      </div>
+    </header>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row text-center gy-4">
+          <div class="col-md-4">
+            <h3 class="display-6 fw-bold text-warning">10 K+</h3>
+            <p class="mb-0">Orders delivered</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="display-6 fw-bold text-warning">25</h3>
+            <p class="mb-0">Passionate teammates</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="display-6 fw-bold text-warning">98 %</h3>
+            <p class="mb-0">Customer satisfaction</p>
+          </div>
+        </div>
+
+        <div class="row align-items-center mt-5 gy-4">
+          <div class="col-lg-6">
+            <h2 class="fw-bold mb-3">Our Mission</h2>
+            <p class="text-muted">
+              We believe great service starts with great people. Our mission is to deliver carefully curated tech at unmatched speed
+              while keeping the shopping experience transparent, friendly, and sustainable.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm">
+              <img src="images/ourmission.jpg" class="w-100 h-100 object-fit-cover" alt="FastShop mission">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="fw-bold text-center mb-5">Meet the Team</h2>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card border-0 shadow-sm">
+              <img src="images/ceo.jpg" class="ratio ratio-1x1 w-100" alt="Abderrazak Bouroumana">
+              <div class="card-body text-center">
+                <h6 class="fw-bold mb-0">Abderrazak Bouroumana</h6>
+                <small class="text-muted">CEO &amp; Founder</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pt-5">
+    <div class="container text-center small py-3 border-top">
+      © 2025 FastShop. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module">
+    import { initAuthUI } from './js/auth.js';
+    import { loadCart   } from './js/store.js';
+
+    initAuthUI();
+    document.getElementById('cart-count').textContent =
+      loadCart().reduce((s, p) => s + p.qty, 0);
+  </script>
+</body>
+</html>

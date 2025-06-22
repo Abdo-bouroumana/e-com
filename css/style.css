@@ -1,0 +1,55 @@
+/* Mini-retouches optionnelles */
+body           { background: #fafafa; }
+.card-title    { font-size: 0.95rem; }
+/* --- NAV BAR TWEAKS --- */
+.navbar {
+  background: linear-gradient(to bottom, #ffffff 0%, #f1f1f1 100%);
+}
+
+.navbar-nav .nav-link {
+  color: #343a40;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #ff6b1a;            /* subtle orange hover like screenshot */
+}
+
+@media (min-width: 992px) {   /* spacing between centred links */
+  .navbar-nav .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+/* --- CAROUSEL --- */
+.carousel-indicators [data-bs-target] {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+/* --- FEATURED CARDS --------------------------------------------------- */
+.featured-card {
+  min-height: 380px;                 /* same height for all */
+  background-size: cover;
+  background-position: center;
+}
+
+.featured-card .card-img-overlay {
+      /* background-color:red; */
+  /* dark-to-transparent gradient so white text stays readable */
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 60%);
+}
+
+/* --- SUBSCRIBE & FOOTER --------------------------------------- */
+#subscribe { background-color:#fafafa; }
+
+#subscribe h2      { color:#313843; }
+#subscribe p       { max-width:580px; margin-inline:auto; }
+
+footer h6          { color:#313843; }
+footer a:hover     { color:#ff6b1a; }          /* orange léger au survol */
+
+@media (max-width: 767.98px){                 /* empile le formulaire */
+  #subscribe .input-group > * { font-size:1rem; }
+}
+
