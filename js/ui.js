@@ -2,7 +2,7 @@
 import { getProducts, PAGE_SIZE } from './api.js';
 import { addToCart, loadCart }    from './store.js';
 
-/* === éléments du DOM =================================================== */
+/* éléments du DOM */
 const gridEl      = document.getElementById('product-grid');
 const pagEl       = document.getElementById('pagination');
 const cartBadge   = document.getElementById('cart-count');
@@ -12,12 +12,12 @@ const searchForm  = document.getElementById('search-form');   // peut être null
 const searchInput = document.getElementById('search-input');
 const clearBtn    = document.getElementById('clear-search');
 
-/* === état global ======================================================= */
+/* état global */
 let currentPage   = 1;
 let lastProducts  = [];     // produits de la page courante (pour add-to-cart)
 let searchQuery   = '';     // chaîne vide → mode catalogue normal
 
-/* === utilitaires ======================================================= */
+/* utilitaires */
 function updateCartBadge () {
   cartBadge.textContent = loadCart().reduce((s, p) => s + p.qty, 0);
 }
@@ -84,7 +84,7 @@ async function loadPage (page = 1) {
   updateCartBadge();
 }
 
-/* === Listeners ========================================================= */
+/* Listeners */
 /* pagination */
 pagEl.addEventListener('click', e => {
   const page = e.target.dataset.page;
@@ -123,5 +123,5 @@ if (searchForm) {
   });
 }
 
-/* === Initialisation ==================================================== */
+/* Initialisation */
 loadPage();
